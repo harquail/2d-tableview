@@ -32,4 +32,4 @@ delegate methods.
 UITableView's edit methods.
 * Anything cool you'd like to add to impress us.
 
-[https://github.com/harquail/smule-2d-tableview/blob/master/featurespec-image.png]()
+(https://github.com/harquail/smule-2d-tableview/blob/master/featurespec-image.png)
