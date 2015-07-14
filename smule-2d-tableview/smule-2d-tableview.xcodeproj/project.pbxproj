@@ -86,9 +86,9 @@
 			children = (
 				F13A9B5B1B54DB3400582726 /* AppDelegate.h */,
 				F13A9B5C1B54DB3400582726 /* AppDelegate.m */,
-				F13A9B7D1B54DB8F00582726 /* TwoDTableView.h */,
 				F13A9B831B54E00200582726 /* TwoDTableViewController.h */,
 				F13A9B841B54E00200582726 /* TwoDTableViewController.m */,
+				F13A9B7D1B54DB8F00582726 /* TwoDTableView.h */,
 				F13A9B7E1B54DB8F00582726 /* TwoDTableView.m */,
 				F13A9B611B54DB3400582726 /* Main.storyboard */,
 				F13A9B641B54DB3500582726 /* Images.xcassets */,

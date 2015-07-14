@@ -12,6 +12,9 @@
 
 @protocol TwoDTableViewDataSource<UITableViewDataSource>
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+- (NSInteger)tableView:(UITableView *)tableView numberOfColumnsInRow:(NSInteger)row;
+- (UICollectionViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath columnAtIndexPath:(NSIndexPath * )indexPath;
 
 @end
 
@@ -20,7 +23,7 @@
 
 @end
 
-@interface TwoDTableView : UITableView
+@interface TwoDTableView : UITableView <UICollectionViewDataSource>
 
 
 @end
