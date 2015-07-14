@@ -14,6 +14,7 @@
 		F13A9B681B54DB3500582726 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F13A9B661B54DB3500582726 /* LaunchScreen.xib */; };
 		F13A9B741B54DB3500582726 /* smule_2d_tableviewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B731B54DB3500582726 /* smule_2d_tableviewTests.m */; };
 		F13A9B7F1B54DB8F00582726 /* TwoDTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B7E1B54DB8F00582726 /* TwoDTableView.m */; };
+		F13A9B851B54E00200582726 /* TwoDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B841B54E00200582726 /* TwoDTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		F13A9B731B54DB3500582726 /* smule_2d_tableviewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = smule_2d_tableviewTests.m; sourceTree = "<group>"; };
 		F13A9B7D1B54DB8F00582726 /* TwoDTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoDTableView.h; sourceTree = "<group>"; };
 		F13A9B7E1B54DB8F00582726 /* TwoDTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoDTableView.m; sourceTree = "<group>"; };
+		F13A9B831B54E00200582726 /* TwoDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoDTableViewController.h; sourceTree = "<group>"; };
+		F13A9B841B54E00200582726 /* TwoDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoDTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 				F13A9B5B1B54DB3400582726 /* AppDelegate.h */,
 				F13A9B5C1B54DB3400582726 /* AppDelegate.m */,
 				F13A9B7D1B54DB8F00582726 /* TwoDTableView.h */,
+				F13A9B831B54E00200582726 /* TwoDTableViewController.h */,
+				F13A9B841B54E00200582726 /* TwoDTableViewController.m */,
 				F13A9B7E1B54DB8F00582726 /* TwoDTableView.m */,
 				F13A9B611B54DB3400582726 /* Main.storyboard */,
 				F13A9B641B54DB3500582726 /* Images.xcassets */,
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F13A9B5D1B54DB3400582726 /* AppDelegate.m in Sources */,
+				F13A9B851B54E00200582726 /* TwoDTableViewController.m in Sources */,
 				F13A9B7F1B54DB8F00582726 /* TwoDTableView.m in Sources */,
 				F13A9B5A1B54DB3400582726 /* main.m in Sources */,
 			);
