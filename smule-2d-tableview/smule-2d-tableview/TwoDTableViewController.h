@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "TwoDTableView.h"
 
-@interface TwoDTableViewController : UIViewController <TwoDTableViewDataSource, TwoDTableViewDelegate>
+@interface TwoDTableViewController : UIViewController <TwoDTableViewDataSource, TwoDTableViewDelegate, UICollectionViewDataSource>
 
 @end

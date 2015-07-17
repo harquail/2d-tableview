@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F133F0D31B55B8BB007FA6A5 /* CollectionViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F133F0D21B55B8BB007FA6A5 /* CollectionViewTableViewCell.m */; };
 		F13A9B5A1B54DB3400582726 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B591B54DB3400582726 /* main.m */; };
 		F13A9B5D1B54DB3400582726 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B5C1B54DB3400582726 /* AppDelegate.m */; };
 		F13A9B631B54DB3400582726 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F13A9B611B54DB3400582726 /* Main.storyboard */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F133F0D11B55B8BB007FA6A5 /* CollectionViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewTableViewCell.h; sourceTree = "<group>"; };
+		F133F0D21B55B8BB007FA6A5 /* CollectionViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewTableViewCell.m; sourceTree = "<group>"; };
 		F13A9B541B54DB3400582726 /* smule-2d-tableview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "smule-2d-tableview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F13A9B581B54DB3400582726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F13A9B591B54DB3400582726 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 				F13A9B841B54E00200582726 /* TwoDTableViewController.m */,
 				F13A9B7D1B54DB8F00582726 /* TwoDTableView.h */,
 				F13A9B7E1B54DB8F00582726 /* TwoDTableView.m */,
+				F133F0D11B55B8BB007FA6A5 /* CollectionViewTableViewCell.h */,
+				F133F0D21B55B8BB007FA6A5 /* CollectionViewTableViewCell.m */,
 				F13A9B611B54DB3400582726 /* Main.storyboard */,
 				F13A9B641B54DB3500582726 /* Images.xcassets */,
 				F13A9B661B54DB3500582726 /* LaunchScreen.xib */,
@@ -224,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F133F0D31B55B8BB007FA6A5 /* CollectionViewTableViewCell.m in Sources */,
 				F13A9B5D1B54DB3400582726 /* AppDelegate.m in Sources */,
 				F13A9B851B54E00200582726 /* TwoDTableViewController.m in Sources */,
 				F13A9B7F1B54DB8F00582726 /* TwoDTableView.m in Sources */,
@@ -422,6 +428,7 @@
 				F13A9B791B54DB3500582726 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F13A9B7A1B54DB3500582726 /* Build configuration list for PBXNativeTarget "smule-2d-tableviewTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +437,7 @@
 				F13A9B7C1B54DB3500582726 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

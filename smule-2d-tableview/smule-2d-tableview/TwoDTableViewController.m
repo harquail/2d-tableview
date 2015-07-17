@@ -7,6 +7,7 @@
 //
 
 #import "TwoDTableViewController.h"
+#import "CollectionViewTableViewCell.h"
 
 @interface TwoDTableViewController ()
 @property (strong, nonatomic) IBOutlet TwoDTableView *tableView;
@@ -40,37 +41,82 @@
     return 1;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfColumnsInRow:(NSInteger)row{
+    return 5;
+}
 
+- (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+
+    return 1;
+}
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+
+    return 5;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+//    NSLog(@"reached collection view delegate");
+
+    UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reuseMeAlso" forIndexPath:indexPath];
+//                                   
+//                                   if (cell == nil){
+//                                       cell = [[UICollectionViewCell alloc] init];
+//                                   }
+
+                                   //
+
+//    
+//    return cell;
+    
+    return cell;
+}
+
+- (UIColor *) randomColor{
+
+        CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
+        CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
+        CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
+        return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 100;
 }
 
 - (UICollectionViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath columnAtIndexPath:(NSIndexPath *)indexPath2{
-
-    return [[UICollectionViewCell alloc] init];
+    
+    
+    
+    UICollectionViewCell * cell = [[UICollectionViewCell alloc] init];
+    cell.backgroundColor = [self randomColor];
+    
+    return cell;
 }
 
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
-    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"resuseMe" forIndexPath:indexPath];
-    
+    //TODO: this should work!!
+//    CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseMe"];
+//
 //    if(cell == nil){
-      UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseMe"];
+        CollectionViewTableViewCell * cell = [[CollectionViewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseMe"];
 //    }
     
-    CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
-    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
-    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
-    UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
     
-    cell.backgroundColor = color;
-    // Configure the cell...
+//    cell.rower = (int)indexPath.row;
+//    cell.dataSource = self;
+    NSLog(@"%@",cell.collectionView);
+    cell.collectionView.dataSource = self;
+    cell.collectionView.backgroundColor = [self randomColor];
+//    self.collectionView.bounds = self.bounds;
     
     return cell;
 }
