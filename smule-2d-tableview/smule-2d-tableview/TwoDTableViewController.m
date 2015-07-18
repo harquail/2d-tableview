@@ -53,7 +53,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
-    return 5;
+    return 50;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -61,6 +61,8 @@
 //    NSLog(@"reached collection view delegate");
 
     UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reuseMeAlso" forIndexPath:indexPath];
+    
+    cell.backgroundColor  = [self randomColor];
 //                                   
 //                                   if (cell == nil){
 //                                       cell = [[UICollectionViewCell alloc] init];

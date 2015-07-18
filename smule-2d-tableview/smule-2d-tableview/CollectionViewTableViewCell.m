@@ -23,19 +23,25 @@
         
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.sectionInset = UIEdgeInsetsMake(1, 1, 1, 1);
-        layout.itemSize = CGSizeMake(1, 1);
+        layout.itemSize = CGSizeMake(self.frame.size.height, self.frame.size.height);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 100, 40) collectionViewLayout:layout];
+        self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         [self.collectionView setUserInteractionEnabled:YES];
-    
-        [self.contentView addSubview:self.collectionView];
-        [self layoutSubviews];
-        
         [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"reuseMeAlso"];
+
+        [self.contentView addSubview:self.collectionView];
+        
     }
     return self;
 
 
+}
+
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    self.collectionView.frame = self.contentView.bounds;
 }
 
 
