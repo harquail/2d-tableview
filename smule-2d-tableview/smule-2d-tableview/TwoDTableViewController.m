@@ -8,9 +8,15 @@
 
 #import "TwoDTableViewController.h"
 #import "CollectionViewTableViewCell.h"
+#import <iTunesApi/ITunesApi.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
-@interface TwoDTableViewController ()
+@interface TwoDTableViewController () <ITunesFeedsApiDelegate>
 @property (strong, nonatomic) IBOutlet TwoDTableView *tableView;
+
+@property NSArray * countyCodes;
+@property ITunesFeedsApi * iTunes;
+@property NSMutableDictionary * iTunesSearchResults;
 
 @end
 
@@ -21,11 +27,26 @@
     
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    // Uncomment the following line to preserve selection between presentations.
+    _tableView.rowHeight = 100.0;
+    _countyCodes = [NSArray arrayWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"iTunesCountries"
+                                                                                     ofType:@"plist"]];
+    _iTunes = [[ITunesFeedsApi alloc] init];
+    [_iTunes setDelegate:self];
+    [_iTunes queryFeedType:QueryTopAlbums forCountry:@"ae" size:10 genre:0 asynchronizationMode:TRUE];
+    
+    _iTunesSearchResults = [[NSMutableDictionary alloc] init];
+     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void) queryResult:(ITunesFeedsApiQueryStatus)status type:(ITunesFeedsQueryType)type results:(NSArray*)results
+{
+    _iTunesSearchResults[@"ae"] = results;
+    // TODO: should not do this
+    [_tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,9 +62,9 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfColumnsInRow:(NSInteger)row{
-    return 5;
-}
+//- (NSInteger)tableView:(UITableView *)tableView numberOfColumnsInRow:(NSInteger)row{
+//    return 5;
+//}
 
 - (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
 
@@ -53,7 +74,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
-    return 50;
+    return 10;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -62,16 +83,31 @@
 
     UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reuseMeAlso" forIndexPath:indexPath];
     
-    cell.backgroundColor  = [self randomColor];
-//                                   
-//                                   if (cell == nil){
-//                                       cell = [[UICollectionViewCell alloc] init];
-//                                   }
+    // row, collumn
+    NSLog(@"%ld %ld",(long)collectionView.tag,(long)indexPath.row);
+//    cell.backgroundColor  = [self randomColor];
+    UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"placeholder.png"]];
+    [cell addSubview:imageView];
+    
+    
+    NSArray * resultsForCountry = _iTunesSearchResults[@"ae"];
+    
+    NSString * url;
+    if(resultsForCountry.count > indexPath.row){
+        ITunesAlbum * album = resultsForCountry[indexPath.row];
+        url = album.artworkUrl100;
+    }
+    
+    url = url ?: @"https://avatars1.githubusercontent.com/u/6343948?v=3&s=460";
+    
+    [imageView sd_setImageWithURL:[NSURL URLWithString:url]
+                      placeholderImage:[UIImage imageNamed:@"placeholder.png"]
+                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                 [imageView setNeedsLayout];
+                                 [cell setNeedsLayout];
+                                }];
 
-                                   //
-
-//    
-//    return cell;
+ 
     
     return cell;
 }
@@ -91,15 +127,15 @@
     return 100;
 }
 
-- (UICollectionViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath columnAtIndexPath:(NSIndexPath *)indexPath2{
-    
-    
-    
-    UICollectionViewCell * cell = [[UICollectionViewCell alloc] init];
-    cell.backgroundColor = [self randomColor];
-    
-    return cell;
-}
+//- (UICollectionViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath columnAtIndexPath:(NSIndexPath *)indexPath2{
+//    
+//    
+//    
+//    UICollectionViewCell * cell = [[UICollectionViewCell alloc] init];
+//    cell.backgroundColor = [self randomColor];
+//    
+//    return cell;
+//}
 
 
 
@@ -109,7 +145,7 @@
 //    CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseMe"];
 //
 //    if(cell == nil){
-        CollectionViewTableViewCell * cell = [[CollectionViewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseMe"];
+        CollectionViewTableViewCell * cell = [[CollectionViewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseMeAlso"];
 //    }
     
     
@@ -117,6 +153,8 @@
 //    cell.dataSource = self;
     NSLog(@"%@",cell.collectionView);
     cell.collectionView.dataSource = self;
+    // use tag to keep track of row
+    cell.collectionView.tag = indexPath.row;
     cell.collectionView.backgroundColor = [self randomColor];
 //    self.collectionView.bounds = self.bounds;
     

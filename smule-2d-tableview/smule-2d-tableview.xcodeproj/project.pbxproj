@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97151F26D451768EDAD41AE8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E690E38CE418BE3011F2257 /* libPods.a */; };
 		F133F0D31B55B8BB007FA6A5 /* CollectionViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F133F0D21B55B8BB007FA6A5 /* CollectionViewTableViewCell.m */; };
 		F13A9B5A1B54DB3400582726 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B591B54DB3400582726 /* main.m */; };
 		F13A9B5D1B54DB3400582726 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B5C1B54DB3400582726 /* AppDelegate.m */; };
@@ -16,6 +17,9 @@
 		F13A9B741B54DB3500582726 /* smule_2d_tableviewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B731B54DB3500582726 /* smule_2d_tableviewTests.m */; };
 		F13A9B7F1B54DB8F00582726 /* TwoDTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B7E1B54DB8F00582726 /* TwoDTableView.m */; };
 		F13A9B851B54E00200582726 /* TwoDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B841B54E00200582726 /* TwoDTableViewController.m */; };
+		F15899DE1B5B021400025F77 /* iTunesCountries.plist in Resources */ = {isa = PBXBuildFile; fileRef = F15899DD1B5B021400025F77 /* iTunesCountries.plist */; };
+		F15899E01B5B0D3100025F77 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = F15899DF1B5B0D3100025F77 /* placeholder.png */; };
+		F15899E31B5B196D00025F77 /* iTunesResultHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F15899E21B5B196D00025F77 /* iTunesResultHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07C0F15F16034ACC908B477C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		1E690E38CE418BE3011F2257 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		95DE36930FF9EFD020181B54 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F133F0D11B55B8BB007FA6A5 /* CollectionViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewTableViewCell.h; sourceTree = "<group>"; };
 		F133F0D21B55B8BB007FA6A5 /* CollectionViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewTableViewCell.m; sourceTree = "<group>"; };
 		F13A9B541B54DB3400582726 /* smule-2d-tableview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "smule-2d-tableview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +53,11 @@
 		F13A9B7E1B54DB8F00582726 /* TwoDTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoDTableView.m; sourceTree = "<group>"; };
 		F13A9B831B54E00200582726 /* TwoDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoDTableViewController.h; sourceTree = "<group>"; };
 		F13A9B841B54E00200582726 /* TwoDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoDTableViewController.m; sourceTree = "<group>"; };
+		F15899DA1B5A27EA00025F77 /* APIKeysAndSecrets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKeysAndSecrets.h; sourceTree = "<group>"; };
+		F15899DD1B5B021400025F77 /* iTunesCountries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iTunesCountries.plist; sourceTree = "<group>"; };
+		F15899DF1B5B0D3100025F77 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		F15899E11B5B196D00025F77 /* iTunesResultHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesResultHandler.h; sourceTree = "<group>"; };
+		F15899E21B5B196D00025F77 /* iTunesResultHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesResultHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97151F26D451768EDAD41AE8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +79,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AA5E5DF245AA009AB35E7FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E690E38CE418BE3011F2257 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23A1379B97E196556F8764A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07C0F15F16034ACC908B477C /* Pods.debug.xcconfig */,
+				95DE36930FF9EFD020181B54 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F13A9B4B1B54DB3400582726 = {
 			isa = PBXGroup;
 			children = (
 				F13A9B561B54DB3400582726 /* smule-2d-tableview */,
 				F13A9B701B54DB3500582726 /* smule-2d-tableviewTests */,
 				F13A9B551B54DB3400582726 /* Products */,
+				23A1379B97E196556F8764A5 /* Pods */,
+				0AA5E5DF245AA009AB35E7FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,12 +121,17 @@
 			children = (
 				F13A9B5B1B54DB3400582726 /* AppDelegate.h */,
 				F13A9B5C1B54DB3400582726 /* AppDelegate.m */,
+				F15899DA1B5A27EA00025F77 /* APIKeysAndSecrets.h */,
 				F13A9B831B54E00200582726 /* TwoDTableViewController.h */,
 				F13A9B841B54E00200582726 /* TwoDTableViewController.m */,
+				F15899E11B5B196D00025F77 /* iTunesResultHandler.h */,
+				F15899E21B5B196D00025F77 /* iTunesResultHandler.m */,
 				F13A9B7D1B54DB8F00582726 /* TwoDTableView.h */,
 				F13A9B7E1B54DB8F00582726 /* TwoDTableView.m */,
 				F133F0D11B55B8BB007FA6A5 /* CollectionViewTableViewCell.h */,
 				F133F0D21B55B8BB007FA6A5 /* CollectionViewTableViewCell.m */,
+				F15899DD1B5B021400025F77 /* iTunesCountries.plist */,
+				F15899DF1B5B0D3100025F77 /* placeholder.png */,
 				F13A9B611B54DB3400582726 /* Main.storyboard */,
 				F13A9B641B54DB3500582726 /* Images.xcassets */,
 				F13A9B661B54DB3500582726 /* LaunchScreen.xib */,
@@ -136,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F13A9B771B54DB3500582726 /* Build configuration list for PBXNativeTarget "smule-2d-tableview" */;
 			buildPhases = (
+				4AF42A941D457F487A2CCA90 /* Check Pods Manifest.lock */,
 				F13A9B501B54DB3400582726 /* Sources */,
 				F13A9B511B54DB3400582726 /* Frameworks */,
 				F13A9B521B54DB3400582726 /* Resources */,
+				BF99FA06272963BCFB8D8A8E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,7 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F13A9B631B54DB3400582726 /* Main.storyboard in Resources */,
+				F15899DE1B5B021400025F77 /* iTunesCountries.plist in Resources */,
 				F13A9B681B54DB3500582726 /* LaunchScreen.xib in Resources */,
+				F15899E01B5B0D3100025F77 /* placeholder.png in Resources */,
 				F13A9B651B54DB3500582726 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +265,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4AF42A941D457F487A2CCA90 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BF99FA06272963BCFB8D8A8E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F13A9B501B54DB3400582726 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -234,6 +308,7 @@
 				F13A9B851B54E00200582726 /* TwoDTableViewController.m in Sources */,
 				F13A9B7F1B54DB8F00582726 /* TwoDTableView.m in Sources */,
 				F13A9B5A1B54DB3400582726 /* main.m in Sources */,
+				F15899E31B5B196D00025F77 /* iTunesResultHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +432,7 @@
 		};
 		F13A9B781B54DB3500582726 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07C0F15F16034ACC908B477C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "smule-2d-tableview/Info.plist";
@@ -367,6 +443,7 @@
 		};
 		F13A9B791B54DB3500582726 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95DE36930FF9EFD020181B54 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "smule-2d-tableview/Info.plist";

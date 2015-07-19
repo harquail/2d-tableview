@@ -18,16 +18,15 @@
 -(instancetype) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     NSLog(@"reached init with frame");
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        
-        
+    if (self) {        
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.sectionInset = UIEdgeInsetsMake(1, 1, 1, 1);
-        layout.itemSize = CGSizeMake(self.frame.size.height, self.frame.size.height);
+        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        layout.itemSize = CGSizeMake(self.frame.size.height * 1.9, self.frame.size.height * 1.9);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         [self.collectionView setUserInteractionEnabled:YES];
-        [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"reuseMeAlso"];
+        [self.collectionView setShowsHorizontalScrollIndicator:NO];
+        [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
 
         [self.contentView addSubview:self.collectionView];
         
