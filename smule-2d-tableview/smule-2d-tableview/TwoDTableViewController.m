@@ -10,48 +10,63 @@
 #import "CollectionViewTableViewCell.h"
 #import <iTunesApi/ITunesApi.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "iTunesResultHandler.h"
 
-@interface TwoDTableViewController () <ITunesFeedsApiDelegate>
+@interface TwoDTableViewController () 
 @property (strong, nonatomic) IBOutlet TwoDTableView *tableView;
 
-@property NSArray * countyCodes;
-@property ITunesFeedsApi * iTunes;
-@property NSMutableDictionary * iTunesSearchResults;
+@property NSArray * countryCodes;
+
+@property NSMutableDictionary * albumSearchResults;
 
 @end
 
 @implementation TwoDTableViewController
 
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        _countryCodes = [NSArray arrayWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"iTunesCountries"
+                                                                                          ofType:@"plist"]];
+        _albumSearchResults = [[NSMutableDictionary alloc] init];
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     _tableView.dataSource = self;
-    _tableView.delegate = self;
     _tableView.rowHeight = 100.0;
-    _countyCodes = [NSArray arrayWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"iTunesCountries"
-                                                                                     ofType:@"plist"]];
-    _iTunes = [[ITunesFeedsApi alloc] init];
-    [_iTunes setDelegate:self];
-    [_iTunes queryFeedType:QueryTopAlbums forCountry:@"ae" size:10 genre:0 asynchronizationMode:TRUE];
+
     
-    _iTunesSearchResults = [[NSMutableDictionary alloc] init];
-     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    for (NSDictionary * countryDict in _countryCodes){
+        NSString * countryCode = countryDict[@"Code"];
+        
+        sleep(0.5);
+        iTunesResultHandler * resultHandler = [[iTunesResultHandler alloc] initWithCountry:countryCode];
+        resultHandler.delegate = self;
+        [resultHandler searchForAlbumArtwork];
+    }
 }
 
--(void) queryResult:(ITunesFeedsApiQueryStatus)status type:(ITunesFeedsQueryType)type results:(NSArray*)results
-{
-    _iTunesSearchResults[@"ae"] = results;
-    // TODO: should not do this
-    [_tableView reloadData];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (int) rowForCountry: (NSString *) country{
+    for (int i =0; i<_countryCodes.count; i++){
+//        NSLog(@"%@", _countryCodes[i][@"Country"]);
+        if ([country isEqualToString:_countryCodes[i][@"Code"]]){
+            return i;
+        }
+    }
+    return -1;
 }
 
 #pragma mark - Table view data source
@@ -90,7 +105,7 @@
     [cell addSubview:imageView];
     
     
-    NSArray * resultsForCountry = _iTunesSearchResults[@"ae"];
+    NSArray * resultsForCountry = _albumSearchResults[_countryCodes[collectionView.tag][@"Code"]];
     
     NSString * url;
     if(resultsForCountry.count > indexPath.row){
@@ -124,7 +139,7 @@
 
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 100;
+    return _countryCodes.count;
 }
 
 //- (UICollectionViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath columnAtIndexPath:(NSIndexPath *)indexPath2{
@@ -161,6 +176,23 @@
     return cell;
 }
 
+- (void)resultsFetchedForCountry:(NSString *)country withResults:(NSArray *)results{
+    
+    
+    int row = [self rowForCountry:country];
+    NSIndexPath * indexPath =  [NSIndexPath indexPathForRow: row inSection:0];
+
+       for (ITunesAlbum * album in results){
+        _albumSearchResults[country] = results;
+        
+        NSLog(@"country: %@ albumURL: %@",country, album.artworkUrl100);
+    }
+    
+    if ([self.tableView.indexPathsForVisibleRows containsObject:indexPath]) {
+    [_tableView reloadRowsAtIndexPaths: [NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+
+}
 
 /*
 // Override to support conditional editing of the table view.

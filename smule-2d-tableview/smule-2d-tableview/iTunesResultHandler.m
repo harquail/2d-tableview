@@ -8,6 +8,28 @@
 
 #import "iTunesResultHandler.h"
 
-@implementation iTunesResultHandler 
+@implementation iTunesResultHandler
+
+- (instancetype)initWithCountry: (NSString *) country
+{
+    self = [super init];
+    if (self) {
+        self.countryCode = country;
+        self.iTunes = [[ITunesFeedsApi alloc] init];
+        [self.iTunes setDelegate:self];
+    }
+    return self;
+}
+
+- (void) searchForAlbumArtwork{
+    [self.iTunes queryFeedType:QueryTopAlbums forCountry:self.countryCode size:10 genre:0 asynchronizationMode:TRUE];
+}
+
+
+-(void) queryResult:(ITunesFeedsApiQueryStatus)status type:(ITunesFeedsQueryType)type results:(NSArray*)results
+{
+    [self.delegate resultsFetchedForCountry:self.countryCode withResults:results];
+}
+
 
 @end

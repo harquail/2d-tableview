@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "TwoDTableView.h"
+#import "iTunesResultHandler.h"
 
-@interface TwoDTableViewController : UIViewController <TwoDTableViewDataSource, TwoDTableViewDelegate, UICollectionViewDataSource>
+@interface TwoDTableViewController : UIViewController <TwoDTableViewDataSource, UICollectionViewDataSource, iTunesResultHandlerDelegate>
 
 @end
