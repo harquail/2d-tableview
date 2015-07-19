@@ -112,12 +112,6 @@
 	</dict>
 	<dict>
 		<key>Code</key>
-		<string>bt</string>
-		<key>Country</key>
-		<string>Bhutan</string>
-	</dict>
-	<dict>
-		<key>Code</key>
 		<string>bw</string>
 		<key>Country</key>
 		<string>Botswana</string>
@@ -142,12 +136,6 @@
 	</dict>
 	<dict>
 		<key>Code</key>
-		<string>cg</string>
-		<key>Country</key>
-		<string>Democratic Republic of the Congo</string>
-	</dict>
-	<dict>
-		<key>Code</key>
 		<string>ch</string>
 		<key>Country</key>
 		<string>Switzerland</string>
@@ -157,12 +145,6 @@
 		<string>cl</string>
 		<key>Country</key>
 		<string>Chile</string>
-	</dict>
-	<dict>
-		<key>Code</key>
-		<string>cn</string>
-		<key>Country</key>
-		<string>China</string>
 	</dict>
 	<dict>
 		<key>Code</key>
@@ -298,21 +280,9 @@
 	</dict>
 	<dict>
 		<key>Code</key>
-		<string>gt</string>
-		<key>Country</key>
-		<string>Guatemala</string>
-	</dict>
-	<dict>
-		<key>Code</key>
 		<string>gw</string>
 		<key>Country</key>
 		<string>Guinea Bissau</string>
-	</dict>
-	<dict>
-		<key>Code</key>
-		<string>gy</string>
-		<key>Country</key>
-		<string>Guyana</string>
 	</dict>
 	<dict>
 		<key>Code</key>
@@ -325,12 +295,6 @@
 		<string>hn</string>
 		<key>Country</key>
 		<string>Honduras</string>
-	</dict>
-	<dict>
-		<key>Code</key>
-		<string>hr</string>
-		<key>Country</key>
-		<string>Croatia</string>
 	</dict>
 	<dict>
 		<key>Code</key>
@@ -364,21 +328,9 @@
 	</dict>
 	<dict>
 		<key>Code</key>
-		<string>is</string>
-		<key>Country</key>
-		<string>Iceland</string>
-	</dict>
-	<dict>
-		<key>Code</key>
 		<string>it</string>
 		<key>Country</key>
 		<string>Italy</string>
-	</dict>
-	<dict>
-		<key>Code</key>
-		<string>jm</string>
-		<key>Country</key>
-		<string>Jamaica</string>
 	</dict>
 	<dict>
 		<key>Code</key>
@@ -418,18 +370,6 @@
 	</dict>
 	<dict>
 		<key>Code</key>
-		<string>kr</string>
-		<key>Country</key>
-		<string>South Korea</string>
-	</dict>
-	<dict>
-		<key>Code</key>
-		<string>kw</string>
-		<key>Country</key>
-		<string>Kuwait</string>
-	</dict>
-	<dict>
-		<key>Code</key>
 		<string>ky</string>
 		<key>Country</key>
 		<string>Cayman Islands</string>
@@ -442,21 +382,9 @@
 	</dict>
 	<dict>
 		<key>Code</key>
-		<string>la</string>
-		<key>Country</key>
-		<string>Laos</string>
-	</dict>
-	<dict>
-		<key>Code</key>
 		<string>lb</string>
 		<key>Country</key>
 		<string>Lebanon</string>
-	</dict>
-	<dict>
-		<key>Code</key>
-		<string>lc</string>
-		<key>Country</key>
-		<string>Saint Lucia</string>
 	</dict>
 	<dict>
 		<key>Code</key>
@@ -469,24 +397,6 @@
 		<string>md</string>
 		<key>Country</key>
 		<string>Moldova</string>
-	</dict>
-	<dict>
-		<key>Code</key>
-		<string>mg</string>
-		<key>Country</key>
-		<string>Madagascar</string>
-	</dict>
-	<dict>
-		<key>Code</key>
-		<string>mk</string>
-		<key>Country</key>
-		<string>Macedonia</string>
-	</dict>
-	<dict>
-		<key>Code</key>
-		<string>ml</string>
-		<key>Country</key>
-		<string>Mali</string>
 	</dict>
 	<dict>
 		<key>Code</key>
