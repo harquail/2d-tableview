@@ -35,15 +35,11 @@
     return self;
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     _tableView.dataSource = self;
     _tableView.rowHeight = kAlbumWidth + _tableView.sectionHeaderHeight/2;
-    
 }
-
 
 - (BOOL)prefersStatusBarHidden{
     return YES;
@@ -69,9 +65,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    //TODO: reuseMeAlso is wrong
     CollectionViewTableViewCell * cell = [[CollectionViewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseMeAlso" itemSize:CGSizeMake(kAlbumWidth, kAlbumWidth)];
     
-    [self getAlbumsForCountry: _countryCodes[indexPath.section][@"Code"]];
+    NSString * country =  _countryCodes[indexPath.section][@"Code"];
+    if (!_albumSearchResults[country]){
+    [self getAlbumsForCountry:country ];
+    }
     
     cell.collectionView.dataSource = self;
     cell.collectionView.tag = indexPath.section;
@@ -141,16 +141,11 @@
     
 }
 
-- (void) getAlbumsForCountry: (NSString *) country{
-    
-    if(_albumSearchResults[country]){
-        return;
-    }
-    else{
++ (void) getAlbumsForCountry: (NSString *) country withDelegate: (id) delegate{
+
         iTunesResultHandler * resultHandler = [[iTunesResultHandler alloc] initWithCountry:country];
-        resultHandler.delegate = self;
+        resultHandler.delegate = delegate;
         [resultHandler searchForAlbumArtwork];
-    }
 }
 
 - (int) rowForCountry: (NSString *) country{
