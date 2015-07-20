@@ -22,9 +22,8 @@
 }
 
 - (void) searchForAlbumArtwork{
-    [self.iTunes queryFeedType:QueryTopAlbums forCountry:self.countryCode size:10 genre:0 asynchronizationMode:TRUE];
+    [self.iTunes queryFeedType:QueryTopAlbums forCountry:self.countryCode size:25 genre:0 asynchronizationMode:YES];
 }
-
 
 -(void) queryResult:(ITunesFeedsApiQueryStatus)status type:(ITunesFeedsQueryType)type results:(NSArray*)results
 {

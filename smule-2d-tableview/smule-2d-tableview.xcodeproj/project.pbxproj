@@ -15,7 +15,6 @@
 		F13A9B651B54DB3500582726 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F13A9B641B54DB3500582726 /* Images.xcassets */; };
 		F13A9B681B54DB3500582726 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F13A9B661B54DB3500582726 /* LaunchScreen.xib */; };
 		F13A9B741B54DB3500582726 /* smule_2d_tableviewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B731B54DB3500582726 /* smule_2d_tableviewTests.m */; };
-		F13A9B7F1B54DB8F00582726 /* TwoDTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B7E1B54DB8F00582726 /* TwoDTableView.m */; };
 		F13A9B851B54E00200582726 /* TwoDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B841B54E00200582726 /* TwoDTableViewController.m */; };
 		F15899DE1B5B021400025F77 /* iTunesCountries.plist in Resources */ = {isa = PBXBuildFile; fileRef = F15899DD1B5B021400025F77 /* iTunesCountries.plist */; };
 		F15899E01B5B0D3100025F77 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = F15899DF1B5B0D3100025F77 /* placeholder.png */; };
@@ -49,11 +48,8 @@
 		F13A9B6D1B54DB3500582726 /* smule-2d-tableviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "smule-2d-tableviewTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F13A9B721B54DB3500582726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F13A9B731B54DB3500582726 /* smule_2d_tableviewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = smule_2d_tableviewTests.m; sourceTree = "<group>"; };
-		F13A9B7D1B54DB8F00582726 /* TwoDTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoDTableView.h; sourceTree = "<group>"; };
-		F13A9B7E1B54DB8F00582726 /* TwoDTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoDTableView.m; sourceTree = "<group>"; };
 		F13A9B831B54E00200582726 /* TwoDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoDTableViewController.h; sourceTree = "<group>"; };
 		F13A9B841B54E00200582726 /* TwoDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoDTableViewController.m; sourceTree = "<group>"; };
-		F15899DA1B5A27EA00025F77 /* APIKeysAndSecrets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKeysAndSecrets.h; sourceTree = "<group>"; };
 		F15899DD1B5B021400025F77 /* iTunesCountries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iTunesCountries.plist; sourceTree = "<group>"; };
 		F15899DF1B5B0D3100025F77 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		F15899E11B5B196D00025F77 /* iTunesResultHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesResultHandler.h; sourceTree = "<group>"; };
@@ -121,13 +117,10 @@
 			children = (
 				F13A9B5B1B54DB3400582726 /* AppDelegate.h */,
 				F13A9B5C1B54DB3400582726 /* AppDelegate.m */,
-				F15899DA1B5A27EA00025F77 /* APIKeysAndSecrets.h */,
 				F13A9B831B54E00200582726 /* TwoDTableViewController.h */,
 				F13A9B841B54E00200582726 /* TwoDTableViewController.m */,
 				F15899E11B5B196D00025F77 /* iTunesResultHandler.h */,
 				F15899E21B5B196D00025F77 /* iTunesResultHandler.m */,
-				F13A9B7D1B54DB8F00582726 /* TwoDTableView.h */,
-				F13A9B7E1B54DB8F00582726 /* TwoDTableView.m */,
 				F133F0D11B55B8BB007FA6A5 /* CollectionViewTableViewCell.h */,
 				F133F0D21B55B8BB007FA6A5 /* CollectionViewTableViewCell.m */,
 				F15899DD1B5B021400025F77 /* iTunesCountries.plist */,
@@ -306,7 +299,6 @@
 				F133F0D31B55B8BB007FA6A5 /* CollectionViewTableViewCell.m in Sources */,
 				F13A9B5D1B54DB3400582726 /* AppDelegate.m in Sources */,
 				F13A9B851B54E00200582726 /* TwoDTableViewController.m in Sources */,
-				F13A9B7F1B54DB8F00582726 /* TwoDTableView.m in Sources */,
 				F13A9B5A1B54DB3400582726 /* main.m in Sources */,
 				F15899E31B5B196D00025F77 /* iTunesResultHandler.m in Sources */,
 			);
