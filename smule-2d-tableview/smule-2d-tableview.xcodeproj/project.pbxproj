@@ -19,6 +19,8 @@
 		F15899DE1B5B021400025F77 /* iTunesCountries.plist in Resources */ = {isa = PBXBuildFile; fileRef = F15899DD1B5B021400025F77 /* iTunesCountries.plist */; };
 		F15899E01B5B0D3100025F77 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = F15899DF1B5B0D3100025F77 /* placeholder.png */; };
 		F15899E31B5B196D00025F77 /* iTunesResultHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F15899E21B5B196D00025F77 /* iTunesResultHandler.m */; };
+		F1DB1D9A1B5D432C00163297 /* twoDTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DB1D991B5D432C00163297 /* twoDTableView.m */; };
+		F1DB1D9D1B5D444000163297 /* topAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DB1D9C1B5D444000163297 /* topAlbumsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		F15899DF1B5B0D3100025F77 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		F15899E11B5B196D00025F77 /* iTunesResultHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesResultHandler.h; sourceTree = "<group>"; };
 		F15899E21B5B196D00025F77 /* iTunesResultHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesResultHandler.m; sourceTree = "<group>"; };
+		F1DB1D981B5D432C00163297 /* twoDTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twoDTableView.h; sourceTree = "<group>"; };
+		F1DB1D991B5D432C00163297 /* twoDTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = twoDTableView.m; sourceTree = "<group>"; };
+		F1DB1D9B1B5D444000163297 /* topAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = topAlbumsViewController.h; sourceTree = "<group>"; };
+		F1DB1D9C1B5D444000163297 /* topAlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = topAlbumsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,14 +121,18 @@
 		F13A9B561B54DB3400582726 /* smule-2d-tableview */ = {
 			isa = PBXGroup;
 			children = (
-				F13A9B5B1B54DB3400582726 /* AppDelegate.h */,
-				F13A9B5C1B54DB3400582726 /* AppDelegate.m */,
 				F13A9B831B54E00200582726 /* TwoDTableViewController.h */,
 				F13A9B841B54E00200582726 /* TwoDTableViewController.m */,
-				F15899E11B5B196D00025F77 /* iTunesResultHandler.h */,
-				F15899E21B5B196D00025F77 /* iTunesResultHandler.m */,
+				F13A9B5B1B54DB3400582726 /* AppDelegate.h */,
+				F13A9B5C1B54DB3400582726 /* AppDelegate.m */,
+				F1DB1D9B1B5D444000163297 /* topAlbumsViewController.h */,
+				F1DB1D9C1B5D444000163297 /* topAlbumsViewController.m */,
+				F1DB1D981B5D432C00163297 /* twoDTableView.h */,
+				F1DB1D991B5D432C00163297 /* twoDTableView.m */,
 				F133F0D11B55B8BB007FA6A5 /* CollectionViewTableViewCell.h */,
 				F133F0D21B55B8BB007FA6A5 /* CollectionViewTableViewCell.m */,
+				F15899E11B5B196D00025F77 /* iTunesResultHandler.h */,
+				F15899E21B5B196D00025F77 /* iTunesResultHandler.m */,
 				F15899DD1B5B021400025F77 /* iTunesCountries.plist */,
 				F15899DF1B5B0D3100025F77 /* placeholder.png */,
 				F13A9B611B54DB3400582726 /* Main.storyboard */,
@@ -296,11 +306,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1DB1D9D1B5D444000163297 /* topAlbumsViewController.m in Sources */,
 				F133F0D31B55B8BB007FA6A5 /* CollectionViewTableViewCell.m in Sources */,
 				F13A9B5D1B54DB3400582726 /* AppDelegate.m in Sources */,
 				F13A9B851B54E00200582726 /* TwoDTableViewController.m in Sources */,
 				F13A9B5A1B54DB3400582726 /* main.m in Sources */,
 				F15899E31B5B196D00025F77 /* iTunesResultHandler.m in Sources */,
+				F1DB1D9A1B5D432C00163297 /* twoDTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

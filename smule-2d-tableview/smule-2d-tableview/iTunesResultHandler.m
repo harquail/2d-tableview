@@ -30,5 +30,11 @@
     [self.delegate resultsFetchedForCountry:self.countryCode withResults:results];
 }
 
++ (void) getAlbumsForCountry: (NSString *) country withDelegate: (id) delegate{
+    
+    iTunesResultHandler * resultHandler = [[iTunesResultHandler alloc] initWithCountry:country];
+    resultHandler.delegate = delegate;
+    [resultHandler searchForAlbumArtwork];
+}
 
 @end

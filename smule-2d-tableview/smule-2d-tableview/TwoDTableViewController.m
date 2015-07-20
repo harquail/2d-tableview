@@ -70,7 +70,7 @@
     
     NSString * country =  _countryCodes[indexPath.section][@"Code"];
     if (!_albumSearchResults[country]){
-    [self getAlbumsForCountry:country ];
+    [iTunesResultHandler getAlbumsForCountry:country withDelegate:self];
     }
     
     cell.collectionView.dataSource = self;
@@ -141,12 +141,7 @@
     
 }
 
-+ (void) getAlbumsForCountry: (NSString *) country withDelegate: (id) delegate{
 
-        iTunesResultHandler * resultHandler = [[iTunesResultHandler alloc] initWithCountry:country];
-        resultHandler.delegate = delegate;
-        [resultHandler searchForAlbumArtwork];
-}
 
 - (int) rowForCountry: (NSString *) country{
     

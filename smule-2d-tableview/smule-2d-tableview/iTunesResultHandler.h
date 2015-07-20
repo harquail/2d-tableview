@@ -20,7 +20,6 @@
 @property (weak, nonatomic) id<iTunesResultHandlerDelegate> delegate;
 @property ITunesFeedsApi * iTunes;
 
-- (void) searchForAlbumArtwork;
-- (instancetype)initWithCountry: (NSString *) country;
++ (void) getAlbumsForCountry: (NSString *) country withDelegate: (id) delegate;
 
 @end
