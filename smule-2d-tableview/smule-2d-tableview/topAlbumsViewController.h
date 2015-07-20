@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "twoDTableView.h"
 
-@interface topAlbumsViewController : UIViewController 
+@interface topAlbumsViewController : UIViewController  <twoDTableViewDataSource, twoDTableViewDelegate>
 
 @end

@@ -98,8 +98,7 @@
     cell.tag = indexPath.row;
     
     NSArray * resultsForCountry = _albumSearchResults[_countryCodes[collectionView.tag][@"Code"]];
-    
-    
+
     NSString * url;
     
     // set url to album artwork if it exists
