@@ -10,7 +10,13 @@
 
 @interface CollectionViewTableViewCell : UITableViewCell
 
+/**
+ the collection view contained within the cell
+ */
 @property UICollectionView * collectionView;
+/**
+ the collection view's data source
+ */
 @property (nonatomic, weak) id <UICollectionViewDataSource> dataSource;
 
 /**

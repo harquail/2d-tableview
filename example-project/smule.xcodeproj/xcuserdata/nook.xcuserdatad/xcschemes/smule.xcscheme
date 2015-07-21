@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F13A9B531B54DB3400582726"
-               BuildableName = "smule-2d-tableview.app"
-               BlueprintName = "smule-2d-tableview"
-               ReferencedContainer = "container:smule-2d-tableview.xcodeproj">
+               BlueprintIdentifier = "F179EAF91B5DF6420047A031"
+               BuildableName = "smule.app"
+               BlueprintName = "smule"
+               ReferencedContainer = "container:smule.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F13A9B6C1B54DB3500582726"
-               BuildableName = "smule-2d-tableviewTests.xctest"
-               BlueprintName = "smule-2d-tableviewTests"
-               ReferencedContainer = "container:smule-2d-tableview.xcodeproj">
+               BlueprintIdentifier = "F179EB121B5DF6420047A031"
+               BuildableName = "smuleTests.xctest"
+               BlueprintName = "smuleTests"
+               ReferencedContainer = "container:smule.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F13A9B6C1B54DB3500582726"
-               BuildableName = "smule-2d-tableviewTests.xctest"
-               BlueprintName = "smule-2d-tableviewTests"
-               ReferencedContainer = "container:smule-2d-tableview.xcodeproj">
+               BlueprintIdentifier = "F179EB121B5DF6420047A031"
+               BuildableName = "smuleTests.xctest"
+               BlueprintName = "smuleTests"
+               ReferencedContainer = "container:smule.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F13A9B531B54DB3400582726"
-            BuildableName = "smule-2d-tableview.app"
-            BlueprintName = "smule-2d-tableview"
-            ReferencedContainer = "container:smule-2d-tableview.xcodeproj">
+            BlueprintIdentifier = "F179EAF91B5DF6420047A031"
+            BuildableName = "smule.app"
+            BlueprintName = "smule"
+            ReferencedContainer = "container:smule.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,10 +76,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F13A9B531B54DB3400582726"
-            BuildableName = "smule-2d-tableview.app"
-            BlueprintName = "smule-2d-tableview"
-            ReferencedContainer = "container:smule-2d-tableview.xcodeproj">
+            BlueprintIdentifier = "F179EAF91B5DF6420047A031"
+            BuildableName = "smule.app"
+            BlueprintName = "smule"
+            ReferencedContainer = "container:smule.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,10 +95,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F13A9B531B54DB3400582726"
-            BuildableName = "smule-2d-tableview.app"
-            BlueprintName = "smule-2d-tableview"
-            ReferencedContainer = "container:smule-2d-tableview.xcodeproj">
+            BlueprintIdentifier = "F179EAF91B5DF6420047A031"
+            BuildableName = "smule.app"
+            BlueprintName = "smule"
+            ReferencedContainer = "container:smule.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

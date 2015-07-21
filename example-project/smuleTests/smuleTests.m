@@ -1,19 +1,19 @@
 //
-//  smule_2d_tableviewTests.m
-//  smule-2d-tableviewTests
+//  smuleTests.m
+//  smuleTests
 //
-//  Created by nook on 7/14/15.
+//  Created by nook on 7/20/15.
 //  Copyright (c) 2015 nook. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface smule_2d_tableviewTests : XCTestCase
+@interface smuleTests : XCTestCase
 
 @end
 
-@implementation smule_2d_tableviewTests
+@implementation smuleTests
 
 - (void)setUp {
     [super setUp];
