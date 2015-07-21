@@ -16,10 +16,25 @@
 
 @interface iTunesResultHandler : NSObject <ITunesFeedsApiDelegate>
 
+/**
+ Two-character country code
+*/
 @property NSString * countryCode;
+/**
+ Delegate notified when results are fetched from iTunes
+*/
 @property (weak, nonatomic) id<iTunesResultHandlerDelegate> delegate;
+
+/**
+ An iTunesFeedsAPI object used to query iTunes
+ */
 @property ITunesFeedsApi * iTunes;
 
+/**
+ Fetches top albums for a country from the iTunes API, creating an iTunesResultHandler object internally
+ @param country the country code to search for top albums
+ @param delegate delegate notified about
+ */
 + (void) getAlbumsForCountry: (NSString *) country withDelegate: (id) delegate;
 
 @end

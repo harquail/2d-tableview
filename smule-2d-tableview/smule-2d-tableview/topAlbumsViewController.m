@@ -10,9 +10,17 @@
 #import "iTunesResultHandler.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
+#define kAlbumWidth 100
+
 @interface topAlbumsViewController ()
+
+// tableview that holds albums
 @property (strong, nonatomic) IBOutlet twoDTableView *tableView;
+
+// a list (array of dictionaries) of country names and country codes
 @property NSArray * countryCodes;
+
+// results of album search (dictionary of ITunesAlbums).  Keys are the country codes
 @property NSMutableDictionary * albumSearchResults;
 
 @end
@@ -23,18 +31,27 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
+        // load country data from plist
         _countryCodes = [NSArray arrayWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"iTunesCountries" ofType:@"plist"]];
         _albumSearchResults = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
+//
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _tableView.rowHeight = 110;
+    
+    // make rows a little bigger than albums
+    _tableView.rowHeight = kAlbumWidth + 10;
     _tableView.twoDDataSource = self;
     _tableView.twoDDelegate = self;
+    
+    // because the first 5 cells are visible at the same time, they get fetched at very similar times
+    // this prevents a race condition between the cells calling reload row
+    [_tableView performSelector:@selector(reloadData) withObject:nil afterDelay:1.0];
 }
+
 
 - (void)loadedRow:(NSInteger)row{
     NSString * country =  _countryCodes[row][@"Code"];
@@ -46,22 +63,19 @@
 - (void) fetchCountry: (NSNumber *) atIndex{
     NSString * country =  _countryCodes[atIndex.integerValue][@"Code"];
     [iTunesResultHandler getAlbumsForCountry:country withDelegate:self];
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-//    [_albumSearchResults removeAllObjects];
     [[SDImageCache sharedImageCache] clearMemory];
-    // Dispose of any resources that can be recreated.
 }
 
 - (UICollectionViewCell *)cellInTwoDTableView:(twoDTableView *)tableView collectionView:(UICollectionView *)collectionView atRow:(NSInteger)row atCol:(NSInteger) col{
+    
+    //make a collectionviewcell with a placeholder image
     UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reuseMe" forIndexPath:[NSIndexPath indexPathForRow: col inSection:0]];
     UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"placeholder.png"]];
     [cell addSubview:imageView];
-    
-    
     
     NSArray * resultsForCountry = _albumSearchResults[_countryCodes[row][@"Code"]];
     NSString * url;
@@ -77,14 +91,14 @@
     
     // load images asynchronously
     [imageView sd_setImageWithURL:[NSURL URLWithString:url]
-                 placeholderImage:[UIImage imageNamed:@"placeholder.png"]
-                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+               placeholderImage:[UIImage imageNamed:@"placeholder.png"]
+               completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                             [imageView setNeedsLayout];
                             [cell setNeedsLayout];
-                        }];
-    
+               }
+     ];
+
     return cell;
-    
 }
 
 - (BOOL) prefersStatusBarHidden{
@@ -106,7 +120,6 @@
 }
 
 - (int) rowForCountry: (NSString *) country{
-    
     for (int i =0; i<_countryCodes.count; i++){
         if ([country isEqualToString:_countryCodes[i][@"Code"]]){
             return i;
@@ -118,12 +131,15 @@
 - (void)resultsFetchedForCountry:(NSString *)country withResults:(NSArray *)results{
     
     _albumSearchResults[country] = results;
-    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:[self rowForCountry:country]] withRowAnimation:UITableViewRowAnimationFade];
+    
+    // reload tableview row that has changed
+    [_tableView beginUpdates];
+    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:[self rowForCountry:country]] withRowAnimation:UITableViewRowAnimationNone];
+    [_tableView endUpdates];
 }
 
 - (void)tappedCellAtRow:(NSInteger)row atCol:(NSInteger)col{
     ITunesAlbum * album = _albumSearchResults[_countryCodes[row][@"Code"]][col];
-    
     //create url for youtube search
     NSString * url = [[NSString stringWithFormat:@"http://m.youtube.com/results?q=%@ %@",album.collectionName,album.artistName] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];

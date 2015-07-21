@@ -7,6 +7,7 @@
 //
 
 #import "iTunesResultHandler.h"
+#define kNumberOfAlbumsToFetch 10
 
 @implementation iTunesResultHandler
 
@@ -21,15 +22,22 @@
     return self;
 }
 
+#pragma mark - private method
+
 - (void) searchForAlbumArtwork{
-    [self.iTunes queryFeedType:QueryTopAlbums forCountry:self.countryCode size:15 genre:0 asynchronizationMode:NO];
+    [self.iTunes queryFeedType:QueryTopAlbums forCountry:self.countryCode size:kNumberOfAlbumsToFetch genre:0 asynchronizationMode:YES];
 }
+
+#pragma mark - ITunesFeedsApi delegate method
 
 -(void) queryResult:(ITunesFeedsApiQueryStatus)status type:(ITunesFeedsQueryType)type results:(NSArray*)results
 {
     [self.delegate resultsFetchedForCountry:self.countryCode withResults:results];
 }
 
+#pragma mark - public method
+
+// fetches results from itunes API for a country; takes a delegate to notify when results return
 + (void) getAlbumsForCountry: (NSString *) country withDelegate: (id) delegate{
     
     iTunesResultHandler * resultHandler = [[iTunesResultHandler alloc] initWithCountry:country];

@@ -8,40 +8,36 @@
 
 #import "twoDTableView.h"
 #import "CollectionViewTableViewCell.h"
+#define kDefaultItemSize 90
 
 @implementation twoDTableView
-
-//- (instancetype)init
-//{
-//    self = [super init];
-//    if (self) {
-//        self.twoDDataSource = self;
-//        self.twoDDelegate = self;
-//    }
-//    return self;
-//}
-
 
 -(id)initWithCoder:(NSCoder*)aDecoder
 {
     self = [super initWithCoder:aDecoder];
-    
     if(self)
     {
         self.dataSource = self;
+        // default item size, can be overridden either at the tableview level
+        // or by setting a collectionViewLayoutDelegate for dynamically sizing individual cells
+        self.itemSize = CGSizeMake(kDefaultItemSize, kDefaultItemSize);
     }
     
     return self;
 }
 
+#pragma mark - 2d table view data source methods
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    // ask data source for a cell
     UICollectionViewCell * cell = [self.twoDDataSource cellInTwoDTableView:self collectionView:collectionView atRow:collectionView.tag atCol:indexPath.row];
 
+    // keep track of collumn using cell tag
     cell.tag = indexPath.row;
-    
+
+    // add tap handler
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapOnCell:)];
     [cell addGestureRecognizer:tap];
-    
     return cell;
 }
 
@@ -49,27 +45,27 @@
     return [self.twoDDataSource colsInTwoDTableView:self inRow:collectionView.tag];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // ask data source for number of sections
+    return [self.twoDDataSource rowsInTwoDTableView:self];
+}
+
 - (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }
 
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections
-    return [self.twoDDataSource rowsInTwoDTableView:self];
-}
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    CollectionViewTableViewCell * cell = [[CollectionViewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseMe" itemSize:CGSizeMake(90, 90)];
-    
+    CollectionViewTableViewCell * cell = [[CollectionViewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseMe" itemSize:self.itemSize];
     cell.collectionView.dataSource = self;
+    // keep track of row using collectionView tag
     cell.collectionView.tag = indexPath.section;
     
+    // send message to delegate
     if([self.twoDDelegate respondsToSelector:@selector(loadedRow:)]){
         [self.twoDDelegate loadedRow:indexPath.section];
     }
+    
     return cell;
 }
 
@@ -81,6 +77,7 @@
     return [self.twoDDataSource sectionTitleInTwoDTableView:tableView atRow:section];
 }
 
+#pragma mark - 2d table view delegate methods
 
 - (void) handleTapOnCell:(UITapGestureRecognizer *)recognizer{
     NSInteger row = [[recognizer view] superview].tag;

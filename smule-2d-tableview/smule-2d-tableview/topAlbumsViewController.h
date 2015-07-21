@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "twoDTableView.h"
 
+/**
+ View controller that displays the top albums for each country
+ */
 @interface topAlbumsViewController : UIViewController  <twoDTableViewDataSource, twoDTableViewDelegate>
 
 @end

@@ -15,7 +15,6 @@
 		F13A9B651B54DB3500582726 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F13A9B641B54DB3500582726 /* Images.xcassets */; };
 		F13A9B681B54DB3500582726 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F13A9B661B54DB3500582726 /* LaunchScreen.xib */; };
 		F13A9B741B54DB3500582726 /* smule_2d_tableviewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B731B54DB3500582726 /* smule_2d_tableviewTests.m */; };
-		F13A9B851B54E00200582726 /* TwoDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13A9B841B54E00200582726 /* TwoDTableViewController.m */; };
 		F15899DE1B5B021400025F77 /* iTunesCountries.plist in Resources */ = {isa = PBXBuildFile; fileRef = F15899DD1B5B021400025F77 /* iTunesCountries.plist */; };
 		F15899E01B5B0D3100025F77 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = F15899DF1B5B0D3100025F77 /* placeholder.png */; };
 		F15899E31B5B196D00025F77 /* iTunesResultHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F15899E21B5B196D00025F77 /* iTunesResultHandler.m */; };
@@ -50,8 +49,6 @@
 		F13A9B6D1B54DB3500582726 /* smule-2d-tableviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "smule-2d-tableviewTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F13A9B721B54DB3500582726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F13A9B731B54DB3500582726 /* smule_2d_tableviewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = smule_2d_tableviewTests.m; sourceTree = "<group>"; };
-		F13A9B831B54E00200582726 /* TwoDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoDTableViewController.h; sourceTree = "<group>"; };
-		F13A9B841B54E00200582726 /* TwoDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoDTableViewController.m; sourceTree = "<group>"; };
 		F15899DD1B5B021400025F77 /* iTunesCountries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iTunesCountries.plist; sourceTree = "<group>"; };
 		F15899DF1B5B0D3100025F77 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		F15899E11B5B196D00025F77 /* iTunesResultHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesResultHandler.h; sourceTree = "<group>"; };
@@ -121,8 +118,6 @@
 		F13A9B561B54DB3400582726 /* smule-2d-tableview */ = {
 			isa = PBXGroup;
 			children = (
-				F13A9B831B54E00200582726 /* TwoDTableViewController.h */,
-				F13A9B841B54E00200582726 /* TwoDTableViewController.m */,
 				F13A9B5B1B54DB3400582726 /* AppDelegate.h */,
 				F13A9B5C1B54DB3400582726 /* AppDelegate.m */,
 				F1DB1D9B1B5D444000163297 /* topAlbumsViewController.h */,
@@ -309,7 +304,6 @@
 				F1DB1D9D1B5D444000163297 /* topAlbumsViewController.m in Sources */,
 				F133F0D31B55B8BB007FA6A5 /* CollectionViewTableViewCell.m in Sources */,
 				F13A9B5D1B54DB3400582726 /* AppDelegate.m in Sources */,
-				F13A9B851B54E00200582726 /* TwoDTableViewController.m in Sources */,
 				F13A9B5A1B54DB3400582726 /* main.m in Sources */,
 				F15899E31B5B196D00025F77 /* iTunesResultHandler.m in Sources */,
 				F1DB1D9A1B5D432C00163297 /* twoDTableView.m in Sources */,

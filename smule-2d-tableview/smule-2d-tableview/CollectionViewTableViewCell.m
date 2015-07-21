@@ -13,21 +13,23 @@
 -(instancetype) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier itemSize: (CGSize) size{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        // set a default layout
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         layout.itemSize = size;
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        
+        // configure collection view
         self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         [self.collectionView setUserInteractionEnabled:YES];
         [self.collectionView setShowsHorizontalScrollIndicator:NO];
         [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-        
         [self.contentView addSubview:self.collectionView];
-        
     }
     return self;
 }
 
+// when doing layout, adjust collection view to fill cell
 -(void)layoutSubviews
 {
     [super layoutSubviews];
