@@ -36,7 +36,7 @@ UITableView's edit methods.
 
 # My Solution
 
-A grid of UICollectionView cells, each in horizontal scrolling collection view contained within the a larger table view.
+A grid of UICollectionView cells, each in horizontal scrolling collection view contained within the larger table view.
 
 I created two classes:
 * CollectionViewTableViewCell — a tableview cell that contains a collection view
