@@ -8,8 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <iTunesApi/ITunesApi.h>
+
+/**
+ Delegate are notified when results are downloaded from iTunes API
+ */
 @protocol iTunesResultHandlerDelegate
 
+/**
+ notification method fires on completion of download
+ @param country the two-character country code that was queried
+ @param results an array of ITunesAlbums
+ */
 - (void) resultsFetchedForCountry: (NSString *) country withResults: (NSArray *) results;
 
 @end

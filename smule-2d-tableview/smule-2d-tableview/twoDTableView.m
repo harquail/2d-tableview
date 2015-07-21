@@ -26,7 +26,7 @@
     return self;
 }
 
-#pragma mark - 2d table view data source methods
+#pragma mark - UICollectionView data source methods
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     // ask data source for a cell
@@ -45,14 +45,11 @@
     return [self.twoDDataSource colsInTwoDTableView:self inRow:collectionView.tag];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // ask data source for number of sections
-    return [self.twoDDataSource rowsInTwoDTableView:self];
-}
-
 - (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }
+
+#pragma mark - UITableView data source methods
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -77,7 +74,13 @@
     return [self.twoDDataSource sectionTitleInTwoDTableView:tableView atRow:section];
 }
 
-#pragma mark - 2d table view delegate methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // ask data source for number of sections
+    return [self.twoDDataSource rowsInTwoDTableView:self];
+}
+
+
+#pragma mark - private method
 
 - (void) handleTapOnCell:(UITapGestureRecognizer *)recognizer{
     NSInteger row = [[recognizer view] superview].tag;

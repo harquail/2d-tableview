@@ -38,7 +38,6 @@
     return self;
 }
 
-//
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -52,22 +51,28 @@
     [_tableView performSelector:@selector(reloadData) withObject:nil afterDelay:1.0];
 }
 
-
-- (void)loadedRow:(NSInteger)row{
-    NSString * country =  _countryCodes[row][@"Code"];
-    if(!_albumSearchResults[country]){
-        [iTunesResultHandler getAlbumsForCountry:country withDelegate:self];
-    }
-}
-
-- (void) fetchCountry: (NSNumber *) atIndex{
-    NSString * country =  _countryCodes[atIndex.integerValue][@"Code"];
-    [iTunesResultHandler getAlbumsForCountry:country withDelegate:self];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     [[SDImageCache sharedImageCache] clearMemory];
+}
+
+- (BOOL) prefersStatusBarHidden{
+    return YES;
+}
+
+#pragma mark - 2d table view data source methods
+
+- (NSInteger)rowsInTwoDTableView:(UITableView *)tableView{
+    return _countryCodes.count;
+}
+
+- (NSInteger)colsInTwoDTableView:(UITableView *)tableView inRow: (NSInteger) row{
+    NSArray * results = _albumSearchResults[_countryCodes[0][@"Code"]];
+    return results.count;
+}
+
+- (NSString *)sectionTitleInTwoDTableView:(twoDTableView *)tableView atRow:(NSInteger)row{
+    return _countryCodes[row][@"Country"];
 }
 
 - (UICollectionViewCell *)cellInTwoDTableView:(twoDTableView *)tableView collectionView:(UICollectionView *)collectionView atRow:(NSInteger)row atCol:(NSInteger) col{
@@ -101,24 +106,9 @@
     return cell;
 }
 
-- (BOOL) prefersStatusBarHidden{
-    return YES;
-}
+#pragma mark - private methods
 
-- (NSInteger)rowsInTwoDTableView:(UITableView *)tableView{
-    return _countryCodes.count;
-}
-
-
-- (NSInteger)colsInTwoDTableView:(UITableView *)tableView inRow: (NSInteger) row{
-    NSArray * results = _albumSearchResults[_countryCodes[0][@"Code"]];
-    return results.count;
-}
-
-- (NSString *)sectionTitleInTwoDTableView:(twoDTableView *)tableView atRow:(NSInteger)row{
-    return _countryCodes[row][@"Country"];
-}
-
+// helper method to find index of country in _countryCodes
 - (int) rowForCountry: (NSString *) country{
     for (int i =0; i<_countryCodes.count; i++){
         if ([country isEqualToString:_countryCodes[i][@"Code"]]){
@@ -126,6 +116,23 @@
         }
     }
     return -1;
+}
+
+#pragma mark - 2d table view delegate methods
+
+// fetch results for rows as they are displayed
+- (void)loadedRow:(NSInteger)row{
+    NSString * country =  _countryCodes[row][@"Code"];
+    if(!_albumSearchResults[country]){
+        [iTunesResultHandler getAlbumsForCountry:country withDelegate:self];
+    }
+}
+
+- (void)tappedCellAtRow:(NSInteger)row atCol:(NSInteger)col{
+    ITunesAlbum * album = _albumSearchResults[_countryCodes[row][@"Code"]][col];
+    //create url for youtube search
+    NSString * url = [[NSString stringWithFormat:@"http://m.youtube.com/results?q=%@ %@",album.collectionName,album.artistName] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
 - (void)resultsFetchedForCountry:(NSString *)country withResults:(NSArray *)results{
@@ -137,13 +144,5 @@
     [_tableView reloadSections:[NSIndexSet indexSetWithIndex:[self rowForCountry:country]] withRowAnimation:UITableViewRowAnimationNone];
     [_tableView endUpdates];
 }
-
-- (void)tappedCellAtRow:(NSInteger)row atCol:(NSInteger)col{
-    ITunesAlbum * album = _albumSearchResults[_countryCodes[row][@"Code"]][col];
-    //create url for youtube search
-    NSString * url = [[NSString stringWithFormat:@"http://m.youtube.com/results?q=%@ %@",album.collectionName,album.artistName] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-}
-
 
 @end
