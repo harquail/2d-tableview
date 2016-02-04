@@ -1,6 +1,6 @@
 # 2d-Tableview
 
-![Demo video](https://youtu.be/gwgEpGpX0vg)
+[Demo video](https://youtu.be/gwgEpGpX0vg)
 
 A grid of UICollectionView cells, each in horizontal scrolling collection view contained within the larger table view.
 
